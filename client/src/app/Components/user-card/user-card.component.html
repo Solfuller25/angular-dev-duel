@@ -1,0 +1,31 @@
+<div class="content">
+    <div class="error-container" *ngIf="error !== ''">
+        <span>
+            {{ error }}
+        </span>
+    </div>
+    <div class="user-container" *ngIf="user !== undefined && error === ''">
+        <h1 *ngIf="winner">WINNER!!</h1>
+        <h1 *ngIf="!winner">LOSER!!</h1>
+        <div class="profile-div">
+            <img class="profile-image" src="{{ user.avatar_url }}"/>
+            <span>{{ user.bio }}</span>
+        </div>
+        <div class="user-details">
+            <app-user-tag [tagName]="'Username'" [tagValue]="user.username"></app-user-tag>
+            <app-user-tag [tagName]="'Name'" [tagValue]="user.name"></app-user-tag>
+            <app-user-tag [tagName]="'Location'" [tagValue]="user.location"></app-user-tag>
+            <div class="tag-container">
+                <div class="tag-name">Titles</div>
+                <div *ngFor="let title of user.titles">{{title}}, </div>
+            </div>
+            <app-user-tag [tagName]="'Favorite Language'" [tagValue]="user['favorite-language']"></app-user-tag>
+            <app-user-tag [tagName]="'Total Stars'" [tagValue]="user['total-stars'].toString()"></app-user-tag>
+            <app-user-tag [tagName]="'Highest Star Count'" [tagValue]="user['highest-starred'].toString()"></app-user-tag>
+            <app-user-tag [tagName]="'Public Repos'" [tagValue]="user['public-repos'].toString()"></app-user-tag>
+            <app-user-tag [tagName]="'Perfect Repos'" [tagValue]="user['perfect-repos'].toString()"></app-user-tag>
+            <app-user-tag [tagName]="'Followers'" [tagValue]="user.followers.toString()"></app-user-tag>
+            <app-user-tag [tagName]="'Following'" [tagValue]="user.following.toString()"></app-user-tag>
+        </div>
+    </div>
+</div>

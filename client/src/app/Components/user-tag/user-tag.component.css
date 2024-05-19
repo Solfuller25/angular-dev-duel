@@ -1,0 +1,15 @@
+.tag-container {
+    display: flex;
+    align-items: center;
+}
+
+.tag-name {
+    height: 20px;
+    width: 150px;
+    background-color: #E1F1FF;
+    border: 1px solid #333;
+    border-radius: 5px;
+    margin: 5px;
+    text-align: center;
+    align-items: center;
+}
